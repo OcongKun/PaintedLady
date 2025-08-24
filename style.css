@@ -1,0 +1,155 @@
+/* Mengimpor font yang dibutuhkan */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url('background.jpg');
+    background-color: #F5E8DC;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background-color 2s, background-image 2s;
+}
+
+.love-you-container {
+    position: relative;
+    width: 90vw;
+    max-width: 450px;
+    height: 100vw;
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.tree-trunk {
+    width: 25px;
+    height: 0;
+    background: linear-gradient(90deg, #5C4033, #6f4e37, #5C4033);
+    position: absolute;
+    bottom: 40px;
+    border-radius: 10px 10px 0 0;
+    transition: height 2s ease-out;
+    z-index: 2;
+}
+
+.branch {
+    position: absolute;
+    width: 8px;
+    background: #5C4033;
+    border-radius: 5px;
+    transform-origin: bottom center;
+    transition: height 1.5s ease-out;
+    height: 0;
+}
+
+.leaf-canopy {
+    position: absolute;
+    top: -50px;
+    width: 100%;
+    height: 350px;
+    transform: scale(0);
+    transition: transform 1.5s ease-in-out;
+    z-index: 3;
+}
+
+.leaf-canopy:hover {
+    transform: scale(1.02);
+}
+
+.pixel {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    opacity: 0;
+    border-radius: 50%; /* Dibuat bulat agar lebih mirip hati */
+    transition: opacity 1.5s;
+}
+
+.message-box {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width:900px;
+    min-height: 300px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #333;
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    opacity: 0;
+    transition: opacity 1.5s;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.message-box p {
+    margin: 5px 0;
+    transition: opacity 0.4s ease-in-out; /* Efek transisi untuk teks */
+}
+
+#main-message {
+    min-height: 80px; /* Memberi tinggi minimum agar kotak tidak berubah ukuran drastis */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#countdown-timer {
+    font-family: 'Fira Code', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+#age-message {
+    font-size: 16px;
+    margin-top: 8px;
+    color: #d9534f;
+    font-family: 'Fira Code', monospace;
+}
+
+/* === CSS UNTUK EFEK ULANG TAHUN === */
+body.birthday-mode {
+    background-image: none;
+    background-color: #111;
+}
+#birthday-effect-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+.matrix-text {
+    position: absolute;
+    top: -50px;
+    font-family: 'Silkscreen', cursive;
+    font-size: 22px;
+    color: #ff00a9;
+    text-shadow: 0 0 5px #ff00a9, 0 0 10px #ff00a9;
+    user-select: none;
+    animation: fall linear forwards;
+}
+@keyframes fall {
+    to { top: 100vh; }
+}
+.firework-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: #ff00a9;
+    box-shadow: 0 0 5px #ff00a9, 0 0 10px #ff00a9;
+    pointer-events: none;
+}
