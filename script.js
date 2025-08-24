@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Happy B'day, Pinaa! 🎉🎂 Semoga hari-harimu selalu cerah dan penuh kebahagiaan!",
         "Kamu pasti bisa tamatin game Stikes ini meski dengan nerf Hemophobia WKWKWK",
         "Dulu aku sempet buat kayak gini pas kamu ulang tahun ke-18, tapi ilmu ku masih cetek wkwk. Jadi ya begituu deh. Sekarang aku udah belajar banyak hal, jadi aku coba buat lagi yang lebih baik, meski hasilnya masih jauh dari kepuasan wkwwk",
-        "Aku harap kamu suka dengan semua usaha yang aku lakukan untuk bikin ini. Aku pengen banget bikin sesuatu yang spesial buat kamu, walaupun aku nggak yakin ini bakal sesuai harapanmu atau nggak.",
+        "Aku harap kamu suka dengan semua usaha yang aku lakukan untuk bikin ini. Aku pengen banget bikin sesuatu yang spesial buat kamu, walaupun aku nggak yakin ini bakal sesuai harapanmu atau ngga wkwkw.",
         "Terimakasih sudah membaca sampe sini, semoga kamu suka yaa :D"
     ];
     let currentMessageIndex = 0; // Untuk melacak pesan saat ini
@@ -158,4 +158,5 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
+
 });
