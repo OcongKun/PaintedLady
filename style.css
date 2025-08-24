@@ -1,4 +1,4 @@
-/* Mengimpor font yang dibutuhkan */
+
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
@@ -70,7 +70,7 @@ body {
     width: 7px;
     height: 7px;
     opacity: 0;
-    border-radius: 50%; /* Dibuat bulat agar lebih mirip hati */
+    border-radius: 50%;
     transition: opacity 1.5s;
 }
 
@@ -88,7 +88,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
     color: #333;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Great Vibes', cursive;
     font-size: 22px;
     opacity: 0;
     transition: opacity 1.5s;
@@ -98,11 +98,11 @@ body {
 
 .message-box p {
     margin: 5px 0;
-    transition: opacity 0.4s ease-in-out; /* Efek transisi untuk teks */
+    transition: opacity 0.4s ease-in-out; 
 }
 
 #main-message {
-    min-height: 80px; /* Memberi tinggi minimum agar kotak tidak berubah ukuran drastis */
+    min-height: 80px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,7 +121,6 @@ body {
     font-family: 'Fira Code', monospace;
 }
 
-/* === CSS UNTUK EFEK ULANG TAHUN === */
 body.birthday-mode {
     background-image: none;
     background-color: #111;
@@ -152,4 +151,5 @@ body.birthday-mode {
     background: #ff00a9;
     box-shadow: 0 0 5px #ff00a9, 0 0 10px #ff00a9;
     pointer-events: none;
+
 }
