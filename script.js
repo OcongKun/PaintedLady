@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- Deklarasi variabel ---
+    
     const treeTrunkElement = document.querySelector(".tree-trunk");
     const leafCanopyElement = document.querySelector(".leaf-canopy");
     const messageBox = document.getElementById("final-message");
-    const mainMessageElement = document.getElementById("main-message"); // Elemen pesan tunggal
+    const mainMessageElement = document.getElementById("main-message"); 
 
-    // --- Kumpulan pesan disimpan dalam sebuah array ---
     const messages = [
         "HIIII PINAAAA, SELAMAT ULANG TAHUN YANG KE-19!!! 🎉🎂🎈",
         "Semoga hari ini kamu dipeluk hangat oleh semua yang kamu cintai. Aku nggak tahu apakah aku termasuk di lingkaran itu, tapi dari jauh aku tetap mendoakanmu dengan tulus. Kamu selalu punya cara untuk bikin dunia jadi sedikit lebih terang, bahkan ketika aku cuma bisa melihat dari sudut bayangan.",
@@ -22,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Aku harap kamu suka dengan semua usaha yang aku lakukan untuk bikin ini. Aku pengen banget bikin sesuatu yang spesial buat kamu, walaupun aku nggak yakin ini bakal sesuai harapanmu atau ngga wkwkw.",
         "Terimakasih sudah membaca sampe sini, semoga kamu suka yaa :D"
     ];
-    let currentMessageIndex = 0; // Untuk melacak pesan saat ini
+    let currentMessageIndex = 0; 
 
     const countdownTimerElement = document.getElementById("countdown-timer");
     const ageMessageElement = document.getElementById("age-message");
@@ -30,14 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const music = document.getElementById("background-music");
     let birthdayModeActivated = false;
 
-    // --- Event listener untuk memulai musik (tidak berubah) ---
     document.body.addEventListener("click", () => {
         if (music.paused) {
             music.play().catch(e => console.error("Audio playback failed:", e));
         }
     }, { once: true });
 
-    // --- URUTAN ANIMASI ---
     setTimeout(() => {
         treeTrunkElement.style.height = "250px";
     }, 1000);
@@ -49,28 +46,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
         messageBox.style.opacity = "1";
-        // Saat kotak muncul, tampilkan pesan pertama
         mainMessageElement.textContent = messages[0];
         currentMessageIndex = 1;
         startTimer();
     }, 4000);
 
-    // --- Event listener baru untuk interaksi klik pada kotak pesan ---
     messageBox.addEventListener('click', () => {
-        mainMessageElement.style.opacity = 0; // 1. Hilangkan teks saat ini
+        mainMessageElement.style.opacity = 0;
 
         setTimeout(() => {
-            // 2. Ganti teksnya
             mainMessageElement.textContent = messages[currentMessageIndex];
-            // 3. Tampilkan kembali teks yang baru
             mainMessageElement.style.opacity = 1;
-            // 4. Pindah ke indeks pesan berikutnya
             currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-        }, 400); // Waktu harus cocok dengan transisi di CSS
+        }, 400);
     });
 
     function createPixelCanopy(pixelCount) {
-        // ... (Fungsi ini tidak berubah)
         const colors = ["#C54B8C", "#FF5CCD", "#A94064", "#C154C1", "#ff00a9"];
         const canopyWidth = leafCanopyElement.offsetWidth;
         const canopyHeight = leafCanopyElement.offsetHeight;
@@ -93,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function startTimer() {
-        // ... (Fungsi ini tidak berubah)
         const startDate = new Date("2006-08-25T00:00:00");
         setInterval(() => {
             const now = new Date();
@@ -116,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1000);
     }
 
-    // ... (Sisa fungsi lainnya tidak berubah)
     function activateBirthdayMode() {
         document.body.classList.add("birthday-mode");
         setInterval(createMatrixText, 400);
@@ -134,7 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function createFireworksOnClick(e) {
-        // Mencegah kembang api muncul saat mengklik kotak pesan
         if (!messageBox.contains(e.target)) {
             for (let i = 0; i < 30; i++) {
                 const particle = document.createElement("div");
@@ -160,3 +148,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
